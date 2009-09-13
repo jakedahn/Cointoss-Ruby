@@ -15,7 +15,6 @@ end
 
 
 get '/' do
-  @wokka = "zomgwtfbbq"
   erb :index
 end
 
