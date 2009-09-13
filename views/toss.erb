@@ -12,14 +12,15 @@
 
     <body>
         <div id="wrapper">
-            <div id="description">
-                <p>Ever need to flip a coin to make up your mind? Well when there is a tough decision the only way to go is with probability, right?</p>
-
-                <p>Instead of spending 30 seconds trying to find a coin, and then 5 seconds to flip it, we've made the process far easier and more accurate. Instead of just one, two, or even three coin flips; we've upped the ante and we run 10,000 just for you, in a split second.</p>
+            <div id="result">
+                <%= @side %>
             </div>
-            <span class="button">
-                <a href="/toss">Click here to toss 10,000 coins.</a>
+            <span class="button"><a href="/">Return.</a> | <a href="result.php">Flip again.</a></span>
+            <div id="resultCount">
+                <span class="heads"><span class="text">Heads:</span> <%= @heads %></span>
+                <span class="tails"><span class="text">Tails:</span> <%= @tails %></span>
             </span>
+            
         </div>
     </body>
 </html>
