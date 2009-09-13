@@ -5,13 +5,11 @@ require 'nokogiri'
 require 'open-uri'
 
 
-# 
+set :public, File.dirname(__FILE__) + '/static'
 
 configure :production do
   # Configure stuff here you'll want to
   # only be run at Heroku at boot
-  # 
-  set :public, File.dirname(__FILE__) + '/static'
 end
 
 
@@ -21,11 +19,10 @@ get '/' do
 end
 
 get '/hai' do
-  erb :index
+  "zomg!!!!!"
 end
 
 get '/toss' do
-
   doc = Nokogiri::HTML(open('http://www.random.org/integers/?num=10&min=0&max=1&col=1&base=10&format=html&rnd=new'))
 
   def getCount(a, h)  
