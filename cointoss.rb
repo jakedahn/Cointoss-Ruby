@@ -6,6 +6,7 @@ require 'open-uri'
 
 
 set :public, File.dirname(__FILE__) + '/static'
+set :environment, ENV['RACK_ENV']
 
 configure :production do
   # Configure stuff here you'll want to
