@@ -4,7 +4,9 @@ require 'sinatra'
 require 'nokogiri'
 require 'open-uri'
 
-
+set :sessions, false
+set :run, false
+set :environment, ENV['RACK_ENV']
 set :public, File.dirname(__FILE__) + '/static'
 
 configure :production do
