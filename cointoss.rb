@@ -21,12 +21,11 @@ get '/' do
 end
 
 get '/hai' do
-  "zomg!!!!!"
+  erb :index
 end
 
 get '/toss' do
-  require 'nokogiri'
-  require 'open-uri'
+
   doc = Nokogiri::HTML(open('http://www.random.org/integers/?num=10&min=0&max=1&col=1&base=10&format=html&rnd=new'))
 
   def getCount(a, h)  
