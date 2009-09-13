@@ -18,6 +18,10 @@ get '/' do
   erb :index
 end
 
+get '/hai' do
+  "zomg!!!!!"
+end
+
 get '/toss' do
   require 'nokogiri'
   require 'open-uri'
