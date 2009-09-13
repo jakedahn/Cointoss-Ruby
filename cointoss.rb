@@ -20,7 +20,7 @@ get '/' do
 end
 
 get '/toss' do
-  doc = Nokogiri::HTML(open('http://www.random.org/integers/?num=10&min=0&max=1&col=1&base=10&format=html&rnd=new'))
+  doc = Nokogiri::HTML(open('http://www.random.org/integers/?num=10000&min=0&max=1&col=1&base=10&format=html&rnd=new'))
 
   def getCount(a, h)  
     a.each do |v|
