@@ -5,11 +5,13 @@ require 'nokogiri'
 require 'open-uri'
 
 
-# set :public, File.dirname(__FILE__) + '/static'
+# 
 
 configure :production do
   # Configure stuff here you'll want to
   # only be run at Heroku at boot
+  # 
+  set :public, File.dirname(__FILE__) + '/static'
 end
 
 
