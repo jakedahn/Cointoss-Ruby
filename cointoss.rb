@@ -1,18 +1,9 @@
 require 'rubygems'
 require 'sinatra'
-
 require 'nokogiri'
 require 'open-uri'
 
-
 set :public, File.dirname(__FILE__) + '/static'
-set :environment, ENV['RACK_ENV']
-
-configure :production do
-  # Configure stuff here you'll want to
-  # only be run at Heroku at boot
-end
-
 
 get '/' do
   erb :index
@@ -21,21 +12,16 @@ end
 get '/toss' do
   doc = Nokogiri::HTML(open('http://www.random.org/integers/?num=10000&min=0&max=1&col=1&base=10&format=html&rnd=new'))
 
-  def getCount(a, h)  
-    a.each do |v|
-      h[v] += 1
-    end
-
-    h.each do |k, v| end
+  def getCount(a, h)
+    a.each { |v| h[v] += 1 }
+    h
   end
 
-  def getSide
-    if @heads > @tails
-      return "Heads."
-    elsif @heads < @tails
-      return "Tails."
-    elsif @heads == @tails
-      return "Tie."
+  def getSide(heads, tails)
+    case heads <=> tails
+    when +1: "Heads."
+    when  0: "Tie."
+    when -1: "Tails."
     end
   end
 
@@ -43,8 +29,8 @@ get '/toss' do
 
   @heads = count["0"]
   @tails = count["1"]
-  
-  @side = getSide
+
+  @side = getSide(@heads, @tails)
 
   erb :toss
 end
