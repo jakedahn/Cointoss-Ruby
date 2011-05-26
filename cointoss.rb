@@ -25,12 +25,19 @@ get '/toss' do
     end
   end
 
-  count = getCount(doc.css('pre.data').inner_text.split, Hash.new(0))
+  def getLast(a)
+     results[-1]
+  end
+
+  results = doc.css('pre.data').inner_text.split
+  count = getCount(results, Hash.new(0))
+
+  @side = getLast(results)
 
   @heads = count["0"]
   @tails = count["1"]
 
-  @side = getSide(@heads, @tails)
+  #@side = getSide(@heads, @tails)
 
   erb :toss
 end
