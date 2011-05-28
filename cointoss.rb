@@ -9,7 +9,7 @@ get '/' do
 end
 
 get '/toss' do
-  results = open('http://www.random.org/integers/?num=10000&min=0&max=1&col=1&base=10&format=plain&rnd=new').string.chop
+  results = open('http://www.random.org/integers/?num=1000&min=0&max=1&col=1&base=10&format=plain&rnd=new').string.chop
 
   @heads = results.count("1")
   @tails = results.count("0")
