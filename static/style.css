@@ -19,36 +19,42 @@ a {
 	text-decoration: none;
 }
 
-a:hover {
-	color: #222222;
-}
+a:hover { color: #222222; }
 
-#result {
+h1 {
 	text-align: center;
 	font-size: 20em;
-	font-weight: bold;
-}
-
-.tie {
-	font-size: 10em;
+	margin: 0;
 }
 
 .button {
 	font-size: 2em;
 	text-align: center;
 	display: block;
+	margin-bottom: 50px;
 }
 
-#resultCount {
+#results {
     padding: 25px;
-    margin-top: 50px !important;
+    margin-top: 50px;
     border: 1px dotted #cccccc;
     width: 150px;
     margin: 0 auto;
-    text-align: center;
     font-size: 12px;
+    font-weight: bold;
+    padding-bottom: 70px;
+    margin-bottom: 150px;
 }
 
-#resultCount span.text {
-    font-weight: bold;
+#results span {
+    font-weight: normal;
+    margin-left: 5px;
 }
+
+#results li {
+  float: left;
+  margin-left: 10px;
+  list-style: none;
+}
+
+li.last {margin-top: 10px;}
